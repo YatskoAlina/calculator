@@ -1,4 +1,5 @@
 import csv
+import time
 
 # file_name = "data_for_counting.csv"
 
@@ -32,11 +33,14 @@ def get_values(num_of_line):
         print("End reading file! \n")
 
 
-def write_res_to_file(num_of_test, res_of_test):
+def write_res_to_file(num_of_test, c_num1, c_num2, c_res, res_of_test, exec_time):
     try:
         with open("tests_result.csv", "a", newline="") as file:
+            formatted_time = "{:.4f}".format(exec_time)
             for_writing = ["Test number {test}".format(test=num_of_test),
-                           "\tTest status: {status}".format(status=res_of_test)]
+                           "\tTest data: {n1} + {n2} + {res}".format(n1=c_num1, n2=c_num2, res=c_res),
+                           "\tTest status: {status}".format(status=res_of_test),
+                           "\tExecution time: {ex_time}".format(ex_time=formatted_time)]
             writer = csv.writer(file)
             writer.writerow(for_writing)
     except FileNotFoundError:
@@ -46,10 +50,20 @@ def write_res_to_file(num_of_test, res_of_test):
 
 
 def add_smth(n1, n2, res):
+    start_time = time.time()
     real_res = int(n1) + int(n2)
-    print(int(real_res))
+
     if real_res == int(res):
-        print("Pass")
+        test_res = "Pass"
+        time.sleep(2)
+        end_time = time.time() - start_time
+        print(test_res, end_time)
+        return test_res, end_time
+
     else:
-        print("Fail")
+        test_res = "Fail"
+        end_time = time.time() - start_time
+        print(test_res, end_time)
+        return test_res, end_time
+
 
