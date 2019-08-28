@@ -2,3 +2,6 @@ Test number 4,	Test data: 7.0 + 5.0 + 12.0,	Test status: Pass,	Execution time: 1
 Test number 2,	Test data: 45.0 + 23.0 + 68.0,	Test status: Pass,	Execution time: 1.3029
 Test number 5,	Test data: 34.0 + 12.0 + 46.0,	Test status: Pass,	Execution time: 1.4591
 Test number 1,	Test data: 12.0 + 13.0 + 25.0,	Test status: Pass,	Execution time: 1.3734
+Test number 5,	Test data: 34.0 + 12.0 + 46.0,	Test status: Pass,	Execution time: 1.3309
+Test number 1,	Test data: 12.0 + 13.0 = 25.0,	Test status: Pass,	Execution time: 0:00:01.298679
+Test number 2,	Test data: 45.0 + 23.0 = 68.0,	Test status: Pass,	Execution time: 0:00:01.339167
